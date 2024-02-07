@@ -84,9 +84,9 @@ function AssideBtn({ title, children, section, clickElem }) {
                 </button>
             </div>
             <div className={style.asside__bottom}>
-                <CallModal>
-                    {modalElem && clickElem}
-                </CallModal>
+                {/* <CallModal> */}
+                    {/* {modalElem && clickElem} */}
+                {/* </CallModal> */}
                 {state && children}
             </div>
         </div>

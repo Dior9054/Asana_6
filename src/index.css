@@ -17,6 +17,7 @@ body {
     flex-direction: column;
 }
 
-body {
-    background-color: red;
+
+main {
+    display: flex;
 }
