@@ -1,0 +1,23 @@
+.modal {
+    position: absolute;
+    z-index: 4;
+    width: max-content;
+    transform: translate(-50%, -70%);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.modal div {
+    padding: 5px 8px;
+    background-color: #4b4b4b;
+    border-radius: 5px;
+    color: white;
+    font-family: "Roboto";
+    font-size: 12px;
+    user-select: none;
+}
+
+.modal svg {
+    transform: translate(0, -1px);
+}
