@@ -1,15 +1,23 @@
-import { useState } from "react";
 import style from './home.module.css';
 
 function Home() {
 
-
     return (
-        <div className={style.wrap_home}>
-            <h1 className={style.home_description}>Главное</h1>
+        <div className={style.home}>
+            <div className={style.home__title}>
+                <h1 className={style.title__name}>Главная</h1>
+                <div className={style.home__title__welcom}>
+                    <h5>Среда, 7 Февраль</h5>
+                    <h1>Добрый день, dior</h1>
+                </div>
+                <button>
+                    <img src="/assets/svg/costomize.svg" />
+                    Настроить
+                </button>
+            </div>
             <div className={style.home_cards}>
-                <span className={style.data}>Понедельник, 5 Февраль</span>
-                <span className={style.greetings}>Добрый день,Bekzhan</span>
+                {/* <span className={style.data}>Понедельник, 5 Февраль</span> */}
+                {/* <span className={style.greetings}>Добрый день,Bekzhan</span> */}
 
                 <div className={style.homePage}>
                     <div className={style.page}>
@@ -47,7 +55,6 @@ function Home() {
                                     <img src="/assets/svg/keyIcon.svg" alt="" />
                                 </div>
                                 <div className={style.navigation}>
-                                    {/* component */}
                                     <span>Предстоит</span>
                                     <span>Просрочено</span>
                                     <span>Выполнено</span>
@@ -61,11 +68,10 @@ function Home() {
                         </div>
 
                         <div >
-                            <div className={style.home_links} style={{width:'130px'}}>
+                            <div className={style.home_links} style={{ width: '130px' }}>
                                 <img className={style.plusImg} src="/assets/img/plus.png" alt="" />
                                 <span>Создать задачу</span>
                             </div>
-                            {/* component */}
                         </div>
                     </div>
 
@@ -76,7 +82,6 @@ function Home() {
                                 <span>Недавние</span>
                                 <img src="/assets/svg/arrowWhite.svg" alt="" />
                             </div>
-                            {/* component */}
 
                             <div className={style.hidden_menu}>
                                 <img className={style.hidden_item} src="/assets/img/trepoints.png" alt="" />
