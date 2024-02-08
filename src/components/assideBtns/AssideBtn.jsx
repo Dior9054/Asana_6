@@ -1,11 +1,15 @@
 
+import { useEffect } from "react";
 import { useState } from "react";
 import CallModal from "../callModal/CallModal";
 import MauseEnterBar from "../mouseEnterBar/MauseEnterBar";
 import style from "./assideBtns.module.css"
 
-function AssideBtn({ title, children, section, clickElem }) {
-    const [modalElem, setModalElem] = useState(false)
+function AssideBtn({ title, children, section, width, clickElem }) {
+    const [open, setOpen] = useState({
+        isOpen: false,
+        date: ""
+    })
     const [state, setState] = useState(true)
     const [mouseModal, setMouseModal] = useState({
         isOpen: false,
@@ -29,10 +33,29 @@ function AssideBtn({ title, children, section, clickElem }) {
     }
 
     const handle__Click = (e) => {
+        setMouseModal(prev => {
+            return { ...prev, isOpen: false }
+        })
         if (e.target.closest("#openMiniModalHelper")) {
-            setModalElem(prev => !prev)
+            setOpen(prev => {
+                return { ...prev, isOpen: !prev.isOpen, date: e }
+            })
         }
     }
+
+    useEffect(() => {
+        const handle__Target = (e) => {
+            if (!e.target.closest(`.${title}`) && !e.target.closest("#modal")) {
+                setOpen(prev => {
+                    return { ...prev, isOpen: false }
+                })
+            }
+        }
+
+        document.addEventListener("click", handle__Target)
+
+        return () => document.removeEventListener("click", handle__Target)
+    }, [])
 
     return (
         <div className={style.asside__blocks}>
@@ -67,7 +90,7 @@ function AssideBtn({ title, children, section, clickElem }) {
                     </MauseEnterBar>
                 }
                 <button
-                    className={style.asside__plus}
+                    className={style.asside__plus + " " + title}
                     id="openMiniModalHelper"
                     onMouseEnter={handle__Enter}
                     onMouseLeave={handle__Leave}
@@ -80,13 +103,17 @@ function AssideBtn({ title, children, section, clickElem }) {
                         viewBox="0 0 24 24">
                         <path d="M11 11V5H13V11H19V13H13V19H11V13H5V11H11Z" fill="#a2a0a2"></path>
                     </svg>
-
                 </button>
             </div>
             <div className={style.asside__bottom}>
-                {/* <CallModal> */}
-                    {/* {modalElem && clickElem} */}
-                {/* </CallModal> */}
+                {
+                    open.isOpen && <CallModal
+                        event={open.date}
+                        width={width}
+                        pos="bottom">
+                        {clickElem}
+                    </CallModal>
+                }
                 {state && children}
             </div>
         </div>

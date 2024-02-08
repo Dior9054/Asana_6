@@ -9,6 +9,7 @@ import CallItem from '../callModal/callItem/CallItem';
 import { Link } from 'react-router-dom';
 
 function Header() {
+    const [loading, setLoading] = useState(false)
     const [modal, setModal] = useState({
         isopen: false,
         date: ""
@@ -39,8 +40,8 @@ function Header() {
     }
 
     const handle__Click = (e) => {
-        if (e.target.closest(".modal__create")) setCreate__Modal(prev => {
-            return { ...prev, isopen: !prev.isopen, date: e }
+        setCreate__Modal(prev => {
+            return { ...prev, isopen: !prev.isopen, date: e.target.closest(".modal__create") }
         })
     }
 
@@ -48,8 +49,8 @@ function Header() {
         setHover(prev => {
             return { ...prev, isOpen: false }
         })
-        if (e.target.closest(".modal__profile")) setModal(prev => {
-            return { ...prev, isopen: !prev.isopen, date: e }
+        setModal(prev => {
+            return { ...prev, isopen: !prev.isopen, date: e.target.closest(".modal__profile") }
         })
     }
 
@@ -66,6 +67,12 @@ function Header() {
         document.addEventListener("click", handle__Target)
 
         return () => document.removeEventListener("click", handle__Target)
+    }, [])
+
+    useEffect(() => {
+        window.addEventListener("load", () => {
+            setLoading(prev => !prev)
+        })
     }, [])
 
     return (
@@ -128,8 +135,7 @@ function Header() {
                     <p>Создать</p>
                 </button>
             </div>
-
-            <div className={style.header__search}>
+            <div className={style.header__search} id="git">
                 <img src="./assets/svg/icons8-search.svg" />
                 <input type="input" placeholder='Поиск...' />
             </div>
