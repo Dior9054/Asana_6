@@ -1,0 +1,89 @@
+.messege_wrap {
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.messege_header {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    padding: 10px 24px;
+    border-bottom: solid 1px rgb(224, 221, 221);
+}
+
+.description {
+    display: flex;
+    column-gap: 10px;
+}
+.description img ,svg{
+    width: 24px;
+    padding: 4px;
+}
+.description h3~:hover{
+    border: solid 1px #f5f6fac7;
+    background-color: #f5f6fac7;
+    border-radius: 6px;
+}
+
+.star_svg:hover .star {
+    fill: #fcbd01;
+    cursor: pointer;
+    width: 24px;
+}
+
+.messege_quantity {
+    color: #AFABAC;
+    font-size: 14px;
+}
+
+.messege_structure{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    column-gap: 20px;
+    padding: 20px;
+    text-decoration:none;
+}
+.messege_structure img{
+    width: 12px;
+}
+
+.filter_btn{
+    display: flex;
+    column-gap: 5px;
+    padding: 5px;
+    background-color: #dbe0fd;
+    border: solid 1px #dbe0fd;
+    border-radius: 7px;
+    color: #3f6ac4;
+    transition: .3s;
+}
+
+.filter_btn:hover{
+    cursor: pointer;
+    background-color: #e7e9f9;
+}
+
+.sort_wrap{
+    display: flex;
+    column-gap: 5px;
+    color: #6D6E6F;
+    font-size: 12px;
+    padding: 5px;
+    border: solid 1px transparent;
+    border-radius: 6px;
+}
+.sort_wrap:hover{
+    background-color: #f5f6fac7;
+    cursor: pointer;
+}
+
+.messege_link{
+    text-decoration: none;
+    color:#3f66ba;
+    font-size: 12px;
+}
+.messege_link:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}

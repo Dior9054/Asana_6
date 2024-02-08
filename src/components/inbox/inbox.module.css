@@ -1,0 +1,41 @@
+.inbox_wrap {
+    width: 100%;
+}
+
+.inbox_wrap >* {
+    font-family: 'Roboto', sans-serif;
+}
+
+.inbox_header {
+    padding: 24px 24px 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    border-bottom: 1px solid rgb(224, 221, 221);
+}
+
+.inbox_header h4 {
+    font-size: 20px;
+}
+
+.inbox_links {
+    display: flex;
+    column-gap: 15px;
+    align-items: center;
+}
+
+.links {
+    color: #6D6E6F;
+    font-size: 14px;
+    border-bottom: 2px solid transparent;
+}
+.links:hover {
+    border-bottom: 2px solid #6D6E6F;
+    cursor: pointer;
+}
+
+.slesh {
+    width: 1px;
+    height: 10px;
+    background-color: rgb(215, 206, 206);
+}
