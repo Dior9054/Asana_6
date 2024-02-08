@@ -68,282 +68,230 @@
     margin-top: auto;
 }
 
-
-
-
-
-.displayF{
-    display: flex;
-    column-gap: 10px;
-    align-items: center;
-}
-.flex_direct{
-    display: flex;
-    flex-direction: column;
-    row-gap: 20px;
-}
-.columnRow{
-    display: flex;
-    flex-direction: column;
-    row-gap:10px;
-}
-.padding{
-    padding: 24px 24px 0;
-}
-
-.home_description{
-    padding: 0 24px;  
-    font-size: 20px;
-}
-
-.home_cards{
-    display: flex;
-    flex-direction: column;
-    padding: 0 30px;
-}
-
-.data{
-    color: #1E1F21;    
-    margin-bottom: 4px;
-    text-align: center;
-}
-
-.greetings{
-    font-size: 32px;
-    text-align: center;
-}
-
-.homePage{
+.home__info__block {
+    border-radius: 24px;
+    background: rgb(37, 38, 40);
+    padding: 0 20px;
+    height: 44px;
     display: flex;
     align-items: center;
-    margin: 10px 0;
-}
-
-.page {
-    display: flex;
     justify-content: space-between;
-    margin-left: auto;
-    padding: 15px 10px;
-    background-color: #f7f1f1;
-    border-radius: 20px;
-    font-size: 12px;
-    transform: translateX(10%);
+    width: 450px;
+    margin: 0 auto;
+    margin-top: 19px;
 }
 
-.pageItem{
-    margin: 0 14px;
-    padding: 2px 6px;
+.home__week {
+    font-family: "Roboto";
+    color: rgb(162, 160, 162);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
     display: flex;
     align-items: center;
-    column-gap: 5px;
-    transition: all .3s;
+    gap: 3px;
 }
-.pageItem:nth-child(1):hover{
-    border: solid 0 transparent;
-    background-color: rgb(218, 212, 212);
-    border-radius: 4px;
+
+.home__week span {
+    color: rgb(162, 160, 162);
+    font-family: "Roboto";
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+}
+
+.home__week p {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.home__info__block>span {
+    width: 1px;
+    height: 24px;
+    background-color: rgb(66, 66, 68);
+    display: block;
+}
+
+.week {
+    border: 1px solid transparent;
+    background-color: transparent;
+    border-radius: 6px;
+    padding: 5px 8px;
+    transition: 0.2s;
     cursor: pointer;
 }
 
-.slesh{
-    width: 1px;
-    background-color: gray;
+.week:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+    color: #f5f4f3;
+    transition: 0.2s;
 }
 
-.test{
+.mouse__modal {
+    max-width: 140px;
+}
+
+.tasks {
     display: flex;
-    align-items: center;
-    column-gap: 5px;
-    margin-left: auto;
-    border: solid 1px;
-    border-radius: 5px;
-    padding: 5px;  
+    gap: 16px;
+    width: 100%;
+    margin-top: 28px;
 }
 
-.homeColumns{
-    display: grid;
-    grid-template-columns: repeat(2,610px);
-    grid-template-rows: repeat(2,410px);
-    grid-gap: 10px;
-    margin-top: 15px;
-}
-.homeColumns >* {
-    box-shadow: 0 0 2px gray;
+.tasks__block {
+    width: 100%;
+    height: 410px;
+    box-shadow: 0 0 0 1px #424244;
+    border: 1px solid #2a2b2d;
+    background-color: #2a2b2d;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s;
 }
 
-.column{
+.tasks__block:hover {
+    box-shadow: 0 0 0 1px #6a696a;
+    transition: 0.2s;
+}
+
+.tasks__top {
     display: flex;
-    position: relative;
-    flex-direction: column;
-    row-gap: 10px;
-    border-radius: 10px;
-    width: 590px;
-    transition: all .2s;
-}
-.column:hover{
-    box-shadow: 0 0 3px rgb(71, 69, 69);
-    transition: all .1s;
-    cursor: grab;
+    align-items: flex-start;
+    gap: 16px;
+    border-bottom: 1px solid #424244;
+    padding: 16px 24px;
+    padding-bottom: 0;
 }
 
-.user_mytask{
-    display: flex;    
-    position: relative;
-    align-items: center;
-    column-gap: 10px;
-    border-bottom: 1px solid;
-    padding: 24px 24px;
-}
-.user_mytask > img{
+.tasks__top>img {
     width: 48px;
-    padding: 7px;
-    border: dashed 1px;
+    height: 48px;
+    border: 1px dashed #a2a0a2;
     border-radius: 50%;
 }
 
-.hidden_menu{
+.tasks__top__btn {
     position: absolute;
-    right: 10px;
-    top: 10px;
-    border: solid 1px rgb(239, 237, 237);
+    top: 8px;
+    right: 8px;
+    background-color: #2a2b2d;
     border-radius: 8px;
+    border: 1px solid #424244;
     display: flex;
     align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    opacity: 0;
+    transition: 0.2s;
 }
 
-.hidden_item{
-    width: 25px;
-    margin: 5px;
-    display: none;
+.tasks__block:hover .tasks__top__btn {
+    opacity: 1;
+    transition: 0.2s;
 }
-.hidden_item:hover{
+
+.tasks__top__btn svg {
+    margin: 4px;
+    width: 100%;
+    height: max-content;
+    padding: 4px;
     border-radius: 5px;
-    background-color: rgb(239, 237, 237);
-    border: solid 1px rgb(239, 237, 237) transparent; 
-}
-.column:hover .hidden_item  {
-    display: block;
+    transition: 0.2s;
 }
 
-.mytask_h{
+.tasks__top__btn:hover svg {
+    background-color: rgba(255, 255, 255, 0.06);
+    transition: 0.2s;
+}
+
+.tasks__top__title {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.tasks__top__name {
+    width: max-content;
+    display: flex;
+    align-items: center;
+    padding-bottom: 4px;
+    gap: 8px;
+}
+
+.tasks__top__name:hover h2 {
+    box-shadow: inset 0 -2px #f5f4f3;
+    transition: 0.2s;
+}
+
+.tasks__top__name h2 {
+    font-family: "Roboto";
     font-size: 20px;
+    line-height: 28px;
+    font-weight: 500;
+    color: #f5f4f3;
+    transition: 0.2s;
 }
 
-.first_h:hover{
+.tasks__top__sections {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 4px;
+}
+
+.tasks__top__sections h3 {
+    font-family: "Roboto";
     cursor: pointer;
-    text-decoration: underline;
-}
-
-.navigation:hover, img,
-.column_item, .users_item, .user_btn{
-    cursor: pointer;
-}
-
-.navigation{
-    display: flex;
-    column-gap: 15px;
-}
-
-.plusImg{
-    width: 12px;
-}
-
-.home_links{
-    display: flex;
-    align-items: center;
-    column-gap: 5px;
-    color: #6D6E6F;
-    font-size: 12px;
-    padding: 5px 5px;
-}
-.home_links:hover{
-    border: solid 1px gray transparent;
-    background-color: #f8f5f5;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.home_links img{
-    width: 12px;
-}
-.home_links:nth-child(1){
-    margin-left: 24px;
-}
-
-.column_item{
-    display: flex;
-    align-items: center;
-    column-gap: 50px;
-    row-gap: 10px;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 10px 24px 0;
-}
-
-.create_button{
-    border: dashed 1px;
-    border-radius: 16px;
-    padding: 14px 16px;
-}
-.create_button img{
-    width: 12px;
-}
-
-.homeUsers{
-    border-radius: 10px;
-    grid-column-start: 1;
-    grid-column-end: 3;
-    margin-bottom: 50px;
-    position: relative;
-    max-width: 1209px;
-    display: flex;
-    flex-direction: column;
-}
-.homeUsers:hover{
-    box-shadow: 0 0 3px rgb(71, 69, 69);
-    transition: all .1s;
-    cursor:grab;
-}
-.homeUsers:hover .hidden_item  {
-    display: block;
-}
-
-.users_Grid{
-    display: grid;
-    justify-content: space-between;
-    row-gap: 30px;
-    grid-template-columns: repeat(4,200px);
-}
-.users_Grid img{
-    width: 64px;
-}
-
-.grid_span{
-    width: 96px;
-    height: 22px;
-    background-color: #3717170D;
-    display: block;
-}
-
-.users_item{
-    display: flex;
-    align-items: center;
-    column-gap: 10px;
-}
-
-.user_invitation{
-    display: flex;
-    flex-direction: column;
-    row-gap: 8px;
-    align-items: center;
-}
-.users_span{
+    color: #a2a0a2;
     font-size: 14px;
-    color: #6D6E6F;
+    font-weight: 500;
+    line-height: normal;
+    transition: 0.2s;
+    padding-bottom: 10px;
 }
 
-.user_btn{
-    padding: 8px 12px;
-    border: solid 1px gray;
+.tasks__top__sections h3:hover,
+.tasks__top__sections h3.active {
+    color: #f5f4f3;
+    box-shadow: inset 0 -2px #a2a0a2;
+    transition: 0.2s;
+}
+
+.tasks__bottom {
+    padding: 16px 24px;
+}
+
+.tasks__create {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 1px solid transparent;
     border-radius: 6px;
-    background-color: #fff;
+    font-family: "Roboto";
+    color: #f5f4f3;
+    padding: 2px 6px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 28px;
+    cursor: pointer;
+    gap: 4px;
+    transition: 0.2s;
+}
+
+.tasks__create:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+    transition: 0.2s;
+}
+
+.peaple {
+    margin-top: 16px;
+}
+
+.tasks__top__notHover:hover h2 {
+    box-shadow: none;
 }

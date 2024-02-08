@@ -4,11 +4,11 @@ import style from "./callModal.module.css"
 function CallModal({ event, width, pos, children }) {
 
     let run = () => {
-        let a = event.target.getBoundingClientRect()
+        let a = event?.target?.getBoundingClientRect() || event.getBoundingClientRect()
         let obj = { top: a.top, left: a.left, }
         if (pos == "right") obj.left = a.right
         else if (pos == "bottom") obj.top = a.bottom
-        else if (pos == "bottom|left") obj.top = a.bottom + 10, obj.left = a.right
+        else if (pos == "bottom|left") obj.top = a.bottom + 5, obj.left = a.right
         return obj
     }
 

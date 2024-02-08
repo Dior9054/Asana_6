@@ -4,7 +4,7 @@ import style from "./mouseEnterBar.module.css"
 function MauseEnterBar({ id, event, pos, children }) {
 
     let run = () => {
-        let a = event.target.closest(`#${id}`).getBoundingClientRect()
+        let a = event?.target?.closest(`#${id}`).getBoundingClientRect() || event.closest(`#${id}`).getBoundingClientRect()
         let obj = {
             top: a.top,
             left: a.left,
