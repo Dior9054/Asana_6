@@ -295,3 +295,37 @@
 .tasks__top__notHover:hover h2 {
     box-shadow: none;
 }
+
+.button {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: 0.2s;
+    width: max-content;
+    padding: 8px 10px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+    transition: 0.2s;
+}
+
+.button__border {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed #a2a0a2;
+    border-radius: 16px;
+    width: 48px;
+    height: 48px;
+}
+
+.button p {
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #a2a0a2;
+}

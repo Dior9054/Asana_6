@@ -24,19 +24,19 @@ function Asside() {
                         </>
                     }>
                     <AssideItem
-                        link="#"
+                        link="/b"
                         text="Отчёты"
                         img_src="/assets/svg/analitico.svg"
                         inbox={false}
                     />
                     <AssideItem
-                        link="#"
+                        link="/c"
                         text="Портфели"
                         img_src="/assets/svg/portfolio.svg"
                         inbox={false}
                     />
                     <AssideItem
-                        link="#"
+                        link="/d"
                         text="Цели"
                         img_src="/assets/svg/target.svg"
                         inbox={false}

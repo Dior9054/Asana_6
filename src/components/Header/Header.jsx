@@ -126,7 +126,7 @@ function Header() {
             }
             <div className={style.header__left}>
                 <button className={style.burger}>
-                    <img src="./assets/svg/burger.svg" />
+                    <img src="/assets/svg/burger.svg" />
                 </button>
                 <button
                     onClick={handle__Click}
@@ -136,7 +136,7 @@ function Header() {
                 </button>
             </div>
             <div className={style.header__search} id="git">
-                <img src="./assets/svg/icons8-search.svg" />
+                <img src="/assets/svg/icons8-search.svg" />
                 <input type="input" placeholder='Поиск...' />
             </div>
 
@@ -153,7 +153,7 @@ function Header() {
                     onMouseLeave={handle__Leave}
                     onClick={handle__Profile}>
                     <img src="/assets/img/user.png" />
-                    <img src="./assets/svg/down.svg" />
+                    <img src="/assets/svg/down.svg" />
                 </button>
             </div>
         </div >
