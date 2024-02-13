@@ -1,0 +1,54 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    background-color: #1e1f21;
+    padding: 24px;
+}
+
+.modal__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.modal__header a {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+.modal__header a:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+    transition: 0.2s;
+}
+
+.modal__header a svg path {
+    fill: #a2a0a2;
+    transition: 0.2s;
+}
+
+.modal__header a:hover svg path {
+    fill: #f5f4f3;
+    transition: 0.2s;
+}
+
+.modal__body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

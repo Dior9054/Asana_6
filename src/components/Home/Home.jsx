@@ -1,8 +1,10 @@
 
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import CallItem from '../callModal/callItem/CallItem';
 import CallModal from '../callModal/CallModal';
+import Create_Project from '../createProject/Create_Project';
 import MauseEnterBar from '../mouseEnterBar/MauseEnterBar';
 import style from './home.module.css';
 
@@ -13,6 +15,7 @@ function Home() {
     const [open, setOpen] = useState({ isOpen: false, date: "" })
     const [doteFirst, setDoteFirst] = useState({ isOpen: false, date: "" })
     const [doteSecans, setDoteSecand] = useState({ isOpen: false, date: "" })
+    const [doteThird, setDoteThird] = useState({ isOpen: false, date: "" })
 
     const handle__Enter = (e) => {
         setTimeout(() => {
@@ -37,7 +40,29 @@ function Home() {
                     return { ...prev, isOpen: false }
                 })
             }
+            if (!e.target.closest("#modales") && !e.target.closest("#modal")) {
+                setOfften(prev => {
+                    return { ...prev, isOpen: false }
+                })
+            }
+            if (!e.target.closest("#modale") && !e.target.closest("#modal")) {
+                setLatest(prev => {
+                    return { ...prev, isOpen: false }
+                })
+            }
+            if (!e.target.closest("#openMiniModalHelper") && !e.target.closest("#modal")) {
+                setDoteFirst(prev => {
+                    return { ...prev, isOpen: false }
+                })
 
+                setDoteSecand(prev => {
+                    return { ...prev, isOpen: false }
+                })
+
+                setDoteThird(prev => {
+                    return { ...prev, isOpen: false }
+                })
+            }
             setMouseModal(prev => {
                 return { ...prev, isOpen: false }
             })
@@ -200,10 +225,24 @@ function Home() {
                                         </button>
                                     </div>
                                 </div>
+                                {
+                                    doteThird.isOpen && <CallModal
+                                        event={doteThird.date}
+                                        width="140px"
+                                        pos="bottom|left">
+                                        <CallItem imgSrc="/assets/svg/project.svg" text="Моя неделя" />
+                                        <CallItem imgSrc="/assets/svg/portfolio.svg" text="Мой месяц" />
+                                    </CallModal>
+                                }
                                 <button
                                     className={style.tasks__top__btn}
                                     onMouseEnter={handle__Enter}
                                     onMouseLeave={handle__Leave}
+                                    onClick={(e) => {
+                                        setDoteThird(prev => {
+                                            return { ...prev, isOpen: !prev.isOpen, date: e.target.closest("#openMiniModalHelper") }
+                                        })
+                                    }}
                                     body="Действия"
                                     id="openMiniModalHelper">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32">
@@ -212,11 +251,18 @@ function Home() {
                                 </button>
                             </div>
                             <div>
-
+                                <NavLink className={style.button} to="/new">
+                                    <div className={style.button__border}>
+                                        <svg viewBox="0 0 32 32" width="16" height="16">
+                                            <path d="M26,14h-8V6c0-1.1-0.9-2-2-2l0,0c-1.1,0-2,0.9-2,2v8H6c-1.1,0-2,0.9-2,2l0,0c0,1.1,0.9,2,2,2h8v8c0,1.1,0.9,2,2,2l0,0c1.1,0,2-0.9,2-2v-8h8c1.1,0,2-0.9,2-2l0,0C28,14.9,27.1,14,26,14z" fill="#a2a0a2" />
+                                        </svg>
+                                    </div>
+                                    <p>Создать проект</p>
+                                </NavLink>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div >
                 <div className={style.peaple}>
                     <div className={style.tasks__block}>
                         <div className={style.tasks__bottom}>
@@ -279,9 +325,10 @@ function Home() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
         </div >
     )
 }
 
 export default Home;
+

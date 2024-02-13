@@ -1,50 +1,90 @@
-.current_wrap{
+
+
+
+
+.current_wrap {
     width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-.current_structure{
-    display: grid;
-    grid-template-columns: 90px 3fr 1fr 35px;
+.current_body {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
     padding: 15px 24px;
-    border-bottom: solid 1px rgb(224, 221, 221);
-    color: #6D6E6F;
+    border-bottom: 1px solid #424244;
 }
-.current_structure img{
+
+.current_items {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    border-radius: 6px;
+    padding: 0 8px;
+    height: 100%;
+    transition: 0.2s;
+}
+
+.current_items:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+    transition: 0.2s;
+}
+
+.current__active {
+    margin-left: auto;
+}
+
+.current_items p {
+    font-family: "Roboto";
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 28px;
+    color: #a2a0a2;
+}
+
+.current_items img {
     width: 15px;
 }
-.current_items{
+
+.current_parent {
+    width: 100%;
+    height: 100%;
     display: flex;
-    column-gap: 5px;
-    justify-self: start;
-    font-size: 12px;
-    padding: 5px;
-    border: solid 1px transparent;
-}
-.current_items:nth-child(3){
-    justify-self:end;
-}
-.current_items:hover{
-    background-color: #f5f6fac7;
-    border: solid 1px #f5f6fac7;
-    border-radius: 7px;
-    cursor: pointer;
+    overflow-y: auto;
 }
 
-.current_pane{
+.current__elem {
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 24px;
-    width: 740px;
-    margin: 100px auto;
-}
-.current_pane img{
-    width: 400px;
-}
-.current_pane >*{
-    color: #1E1F21;
-}
-.current_pane h3{
-    font-size: 30px;
+    justify-content: center;
+    gap: 24px;
 }
 
+.current__elem img {
+    width: 400px;
+    height: 200px;
+}
+
+.current__elem h3 {
+    font-family: "Roboto";
+    font-size: 32px;
+    line-height: 40px;
+    text-align: center;
+    font-weight: 400;
+    color: #f5f4f3;
+}
+
+.current__elem p {
+    font-family: "Roboto";
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #f5f4f3;
+}
