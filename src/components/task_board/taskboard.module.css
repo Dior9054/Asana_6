@@ -1,0 +1,79 @@
+.table_structure{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 24px;
+    color: #6D6E6F;
+    font-size: 12px;
+}
+.table_structure img{
+    width: 12px;
+}
+
+.wrap_items{
+    display: flex;
+    column-gap: 15px;
+}
+
+.table_items{
+    display: flex;
+    column-gap: 5px;
+    padding: 5px;
+    border: solid 1px transparent;
+    cursor: pointer;
+}
+.table_items:hover{
+    background-color: #f5f6fac7;
+    border: solid 1px #f5f6fac7;
+    border-radius: 7px;
+}
+
+.board_wrap{
+    display: flex;
+    /* column-gap: 20px; */
+    padding: 16px 24px 0;
+    background-color: #f9f8f8;
+}
+
+.board{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    width: 300px;
+    padding:0 12px;
+    border: solid 1px transparent;
+    border-radius: 6px;
+    transition: .3s;
+}
+.board:hover{
+    border: solid 1px rgb(236, 233, 233);
+}
+
+.addChapter{
+    display: flex;
+    column-gap: 5px;
+    width: 180px;
+    padding: 6px;
+    cursor: pointer;
+    border-radius: 6px;
+    color: #6D6E6F;
+}
+.addChapter:hover{
+    background-color: #f5f3f3;
+}
+
+.card{
+    background-color: #f5f3f3;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 6px;
+}
+
+.card_items{
+    display: flex;
+    flex-direction: column;
+    padding: 0 12px;
+    margin: 12px;
+}

@@ -1,0 +1,12 @@
+.wrap{
+    width: 799px;
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+input{
+    width: 300px;
+}
+

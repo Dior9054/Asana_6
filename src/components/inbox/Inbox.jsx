@@ -17,8 +17,8 @@ function Inbox(){
                 </div>
             </div>
 
-            {/* <InboxMain/> */}
-            <Archive/>
+            <InboxMain/>
+            {/* <Archive/> */}
         </div>
 
         
