@@ -31,7 +31,6 @@ function MyTask() {
                     </button>
                 </div>
             </div>
-            {/* <TaskBoard/> */}
             <TaskList/>
         </div>
     )
