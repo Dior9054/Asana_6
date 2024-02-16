@@ -133,13 +133,14 @@
 }
 
 .tasks {
+    margin-top: 28px;
     display: flex;
     gap: 16px;
-    width: 100%;
-    margin-top: 28px;
+    flex-wrap: wrap;
 }
 
-.tasks__block {
+.tasks__block,
+.tasks__block__active {
     width: 100%;
     height: 410px;
     box-shadow: 0 0 0 1px #424244;
@@ -151,9 +152,14 @@
     transition: 0.2s;
 }
 
-.tasks__block:hover {
+.tasks__block:hover,
+.tasks__block__active:hover {
     box-shadow: 0 0 0 1px #6a696a;
     transition: 0.2s;
+}
+
+.tasks__block__active {
+    width: 49.3%;
 }
 
 .tasks__top {
@@ -189,7 +195,8 @@
     transition: 0.2s;
 }
 
-.tasks__block:hover .tasks__top__btn {
+.tasks__block:hover .tasks__top__btn,
+.tasks__block__active:hover .tasks__top__btn {
     opacity: 1;
     transition: 0.2s;
 }
@@ -286,10 +293,6 @@
 .tasks__create:hover {
     background-color: rgba(255, 255, 255, 0.06);
     transition: 0.2s;
-}
-
-.peaple {
-    margin-top: 16px;
 }
 
 .tasks__top__notHover:hover h2 {
