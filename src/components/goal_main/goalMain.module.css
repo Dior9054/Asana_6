@@ -1,0 +1,31 @@
+.goal_main{
+    width: 600px;
+    margin: 150px auto 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 30px;
+    color: #fff;
+    text-align: center;
+}
+
+.goal_main_p{
+    font-size: 14px;
+}
+
+.btn{
+    border: none;
+    background-color:#4573D2;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .3s;
+}
+.btn:hover{
+    background-color:#3c6bc8;
+}
+
+.goal_video{
+    width: 700px;
+}
