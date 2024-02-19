@@ -1,4 +1,4 @@
-.asside__item,
+/* .asside__item,
 .asside__item__active {
     display: flex;
     align-items: center;
@@ -15,16 +15,16 @@
 .asside__item:hover {
     background-color: rgba(255, 255, 255, 0.04);
     transition: background-color 0.2s;
-}
+} */
 
-.asside__item img,
+/* .asside__item img,
 .asside__item__active img {
     width: 20px;
     height: 20px;
     object-fit: cover;
-}
+} */
 
-.asside__item p,
+/* .asside__item p,
 .asside__item__active p {
     font-family: "Roboto";
     font-size: 14px;
@@ -32,15 +32,15 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     color: #f5f4f3;
-}
+} */
 
-.asside__warning {
+/* .asside__warning {
     width: 7px;
     height: 7px;
     background-color: #e8b668;
     border-radius: 50%;
-}
-
+} */
+/* 
 .asside__item__active {
     background-color: rgba(255, 255, 255, 0.06);
-}
+} */

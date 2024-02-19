@@ -1,20 +1,21 @@
 
-import style from "./callItem.module.css"
 import { NavLink } from "react-router-dom";
 
-function CallItem({ click, imgSrc, link, text }) {
+function CallItem({ click, imgSrc, link, path, text }) {
     if (!!link) {
         return (
-            <NavLink className={style.modal}>
-                <img src={imgSrc} />
-                <p>{text}</p>
+            <NavLink to={path} className="flex items-center gap-[8px] w-[100%] px-[10px] py-[6px] cursor-pointer duration-[0.2s] hover:bg-[#ffffff1c]">
+                {imgSrc}
+                <p className="font-roboto text-[13px] leading-[22px] text-[#f5f4f3]">{text}</p>
             </NavLink>
         )
     } else {
         return (
-            <button className={style.modal} onClick={click}>
-                <img src={imgSrc} />
-                <p>{text}</p>
+            <button
+                className="flex items-center gap-[8px] w-[100%] px-[10px] py-[6px] cursor-pointer duration-[0.2s] hover:bg-[#ffffff1c]"
+                onClick={click}>
+                {imgSrc}
+                <p className="font-roboto text-[13px] leading-[22px] text-[#f5f4f3]">{text}</p>
             </button>
         )
     }

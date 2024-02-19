@@ -1,68 +1,43 @@
 import { Outlet } from "react-router-dom"
 import Header from "../Header/Header";
 import Asside from "../asside/Asside";
+import { useId } from "react";
+import { useEffect } from "react";
+import { createContext } from "react";
 
-function Layout() {
+export const HeaderBuregrBtn = createContext("")
+export const AssideWidthBtn = createContext("")
+
+export default function Layout() {
+
+    const headerBurger = useId().slice(1, -1)
+    const assideBurger = useId().slice(1, -1)
+
+    useEffect(() => {
+        let clickBtn = document.querySelector(`#${headerBurger}`)
+        let chageBtn = document.querySelector(`#${assideBurger}`)
+
+        clickBtn.onclick = (e) => {
+            if (chageBtn.className.includes("w-[0]")) {
+                chageBtn.classList.remove("w-[0]")
+                chageBtn.classList.remove("translate-x-[-200px]")
+            } else {
+                chageBtn.classList.add("w-[0]")
+                chageBtn.classList.add("translate-x-[-200px]")
+            }
+        }
+    }, [])
 
     return (
-        <>
-            <Header />
-            <main>
-                <Asside />
-                <Outlet />
-            </main>
-        </>
+        <HeaderBuregrBtn.Provider value={headerBurger}>
+            <AssideWidthBtn.Provider value={assideBurger}>
+                <Header />
+                <main className="w-[100%] h-[100%] flex overflow-hidden bg-[#1e1f21]">
+                    <Asside />
+                    <Outlet />
+                </main>
+            </AssideWidthBtn.Provider>
+        </HeaderBuregrBtn.Provider>
     );
 }
-
-export default Layout;
-
-
-
-
-// import { Outlet } from "react-router-dom"
-// import Header from "../Header/Header";
-// import Asside from "../asside/Asside";
-// import { useState } from "react";
-// import { useEffect } from "react";
-
-// function Hover() {
-//     const [state, setState] = useState(0)
-//     useEffect(() => {
-//         const handle__Target = (e) => setState(e)
-//         document.addEventListener("mousemove", handle__Target)
-//         removeEventListener("mousemove", handle__Target)
-//     }, [])
-//     return (
-//         <div style={{
-//             "position": "fixed",
-//             "top": state.clientY + "px",
-//             "left": state.clientX + "px",
-//             "width": "200px",
-//             "height": "200px",
-//             "background": "red",
-//             "borderRadius": "50%",
-//             "filter": "blur(100px)",
-//             "cursor": "crosshair",
-//             "transform": "translate(-50%, -50%)",
-//             "zIndex": "100"
-//         }}>
-//         </div>
-//     )
-// }
-
-// function Layout() {
-//     return (
-//         <>
-//             <Hover />
-//             <Header />
-//             <main>
-//                 <Asside />
-//                 <Outlet />
-//             </main>
-//         </>
-//     );
-// }
-
-// export default Layout;
 
