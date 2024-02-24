@@ -69,6 +69,7 @@ export default function CallModal({ event, width, pos, children }) {
                 <div
                     id={modalId}
                     className={`fixed left-[10px] bg-[#1e1f21] py-[4px] rounded-[4px] border-[1px] border-solid border-[#424244] shadow-modal z-[5]`}
+                    onClick={() => setState(prev => !prev)}
                     style={{
                         "width": width + "px",
                         "left": Cordinations()?.left + "px",

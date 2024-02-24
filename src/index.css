@@ -17,7 +17,7 @@
     background-color: transparent;
 }
 
-main {
+.main__right__scrollbar {
     scrollbar-color: #4c4e51 #343638;
 }
 
